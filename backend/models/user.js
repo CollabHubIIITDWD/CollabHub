@@ -6,6 +6,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    college: {
+        type: String,
+        required: true
+    },
     userName: {
         type: String,
         required: true
@@ -21,6 +25,25 @@ const userSchema = new mongoose.Schema({
     Photo: {
         type: String,
     },
+    Portfolio: {
+        type: String
+    },
+    LinkedIn: {
+        type: String
+    },
+    Github: {
+        type: String,
+        required: true
+    },
+    GFG: {
+        type: String
+    },
+    LeetCode: {
+        type: String
+    },
+    posts:[{
+        type: ObjectId, ref: 'post'
+    }],
     followers: [{ type: ObjectId, ref: "USER" }],
     following: [{ type: ObjectId, ref: "USER" }]
 })

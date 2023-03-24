@@ -8,7 +8,7 @@ const postSchema = new mongoose.Schema({
     },
     photo: {
         type: String,
-        require: true
+        required: true
     },
     likes: [{ type: ObjectId, ref: "USER" }],
     comments: [{
@@ -18,6 +18,23 @@ const postSchema = new mongoose.Schema({
     postedBy: {
         type: ObjectId,
         ref: "USER"
+    },
+    categories: [{
+        category: { type: String , required: true},  
+    }], 
+    techStacks: [{
+        tech: { type: String }
+    }],
+    startDate: {
+        type: Date
+    },
+    endDate: {
+        type: Date
+    },
+    collaborators: {
+        type: Number,
+        required: true,
+        default: 0
     }
 }, { timestamps: true })
 
