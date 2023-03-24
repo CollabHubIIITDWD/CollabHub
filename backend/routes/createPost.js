@@ -17,22 +17,28 @@ router.get("/allposts", requireLogin, (req, res) => {
 })
 
 router.post("/createPost", requireLogin, (req, res) => {
-    const { body, pic } = req.body;
-    console.log(pic)
-    if (!body || !pic) {
+    const { body , pic ,categories, techStacks , startDate, endDate, collaborators} = req.body;
+    // console.log(pic)
+    if (!body || !categories || !collaborators) {
         return res.status(422).json({ error: "Please add all the fields" })
     }
     console.log(req.user)
     const post = new POST({
         body,
         photo: pic,
-        postedBy: req.user
+        postedBy: req.user,
+        categories: categories,
+        techStacks: techStacks,
+        startDate: startDate,
+        endDate: endDate,
+        collaborators: collaborators
     })
     post.save().then((result) => {
         return res.json({ post: result })
     }).catch(err => console.log(err))
 })
 
+//frontend check
 router.get("/myposts", requireLogin, (req, res) => {
     POST.find({ postedBy: req.user._id })
         .populate("postedBy", "_id name")
