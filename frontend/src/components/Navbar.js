@@ -41,7 +41,8 @@ export default function Navbar({ login }) {
 
   return (
     <div className="navbar">
-      <img src={logo} alt="" />
+      <h1>CollabHub</h1>
+      {/* <img src={logo} alt="" /> */}
       <ul className="nav-menu">{loginStatus()}</ul>
     </div>
   );

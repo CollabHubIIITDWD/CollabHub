@@ -126,6 +126,7 @@ export default function Home() {
 
   return (
     <div className="home">
+      <div className="homecard">
       {/* card */}
       {data.map((posts) => {
         return (
@@ -139,7 +140,7 @@ export default function Home() {
                 />
               </div>
               <h5>
-                <Link to={`/profile/${posts.postedBy._id}`}>
+                <Link className="idname" to={`/profile/${posts.postedBy._id}`}>
                   {posts.postedBy.name}
                 </Link>
               </h5>
@@ -292,6 +293,7 @@ export default function Home() {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 }
