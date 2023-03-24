@@ -1,5 +1,5 @@
 module.exports = {
-    mongoUrl: "mongodb+srv://Monu:Lucifer%40666@mongo.dajlsqt.mongodb.net/test?authSource=mongo&authMechanism=SCRAM-SHA-1",
+    mongoUrl: "mongodb+srv://harshitmishra655:harshit123@cluster.ctpnd7l.mongodb.net/?retryWrites=true&w=majority",
     Jwt_secret: "faslkfocvneofu"
 
 };
