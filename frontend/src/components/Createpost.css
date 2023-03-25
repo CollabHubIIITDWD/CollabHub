@@ -1,8 +1,15 @@
 .createPost{
-    max-width: 500px;
+    /* max-width: 500px; */
+    /* width: 100vw; */
+    /* height: 80vh; */
     margin: 10px auto;
     border: 1px solid rgb(173, 173, 173);
     border-radius: 5px;
+}
+
+.form{
+    display: flex;
+    /* flex-direction: column; */
 }
 
 .main-div{
@@ -22,12 +29,31 @@
 
 .details{
     border-top: 1px solid rgb(173, 173, 173) ;
+    display: flex;
+    flex-direction: row;
+}
+
+.leftDetails{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.title{
+    display: block;
 }
 
 textarea{
     width: 90%;
-    border: none;
+    /* border: none; */
     outline: none;
+}
+
+#description{
+    margin:30px;
 }
 
 #output{
