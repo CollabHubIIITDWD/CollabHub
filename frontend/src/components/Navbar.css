@@ -13,18 +13,21 @@ img{
 ul{
     display: flex;
     align-items: baseline;
+    color: white;
     
 }
 
 li{
     list-style: none;
     padding: 1px 20px;
+    color: white;
 }
 
 a{
     text-decoration: none;
     color: black;
     font-size: 18px;
+    color: white;
 }
 
 .primaryBtn{
