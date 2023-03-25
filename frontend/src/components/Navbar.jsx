@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import logo from "../img/logo.png";
+import logo from "../img/logo.jpg";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { LoginContext } from "../context/LoginContext";
@@ -15,10 +15,12 @@ export default function Navbar({ login }) {
           <Link to="/profile">
             <li>Profile</li>
           </Link>
-          <Link to="/createPost">Create Post</Link>
-          <Link to="/post">Posts</Link>
+
+          <Link to="/createPost"><li>Create Post</li></Link>
+          <Link to="/post"><li>Posts</li></Link>
+          
           <Link style={{ marginLeft: "20px" }} to="/followingpost">
-            My Following
+            My Posts
           </Link>
           <Link to={""}>
             <button className="primaryBtn" onClick={() => setModalOpen(true)}>

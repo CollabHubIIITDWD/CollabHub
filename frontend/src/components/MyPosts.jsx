@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 
-export default function MyFolliwngPost() {
+export default function() {
   const navigate = useNavigate();
   const [data, setData] = useState([]);
   const [comment, setComment] = useState("");
@@ -22,7 +22,7 @@ export default function MyFolliwngPost() {
     }
 
     // Fetching all posts
-    fetch("http://localhost:5000/myfollwingpost", {
+    fetch("http://localhost:5000/myposts", {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("jwt"),
       },

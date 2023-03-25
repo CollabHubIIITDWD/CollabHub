@@ -61,9 +61,9 @@ export default function Profie() {
         <div className="pofile-data">
           <h1>{JSON.parse(localStorage.getItem("user")).name}</h1>
           <div className="profile-info" style={{ display: "flex" }}>
-            <p>{pic ? pic.length : "0"} posts</p>
+            {/* <p>{pic ? pic.length : "0"} posts</p>
             <p>{user.followers ? user.followers.length : "0"} followers</p>
-            <p>{user.following ? user.following.length : "0"} following</p>
+            <p>{user.following ? user.following.length : "0"} following</p> */}
           </div>
         </div>
       </div>

@@ -77,9 +77,6 @@ const NewPost = () => {
             <option value="category1">Category 1</option>
             <option value="category2">Category 2</option>
             <option value="category3">Category 3</option>
-            <option value="category3">Category 3</option>
-            <option value="category3">Category 3</option>
-            <option value="category3">Category 3</option>
           </select>
           <div>Selected categories: {categories.map((category, index) => <span key={index}>{category} </span>)}</div>
           {/* <input type="text" id="category" value={category} onChange={handleCategoryChange} required /> */}

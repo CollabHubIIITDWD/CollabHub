@@ -4,7 +4,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Post from "./components/Post";
-// import Home from "./components/Home";
+import Home from "./components/Home";
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
 import Profie from "./components/Profie";
@@ -14,7 +14,7 @@ import Createpost from "./components/Createpost";
 import { LoginContext } from "./context/LoginContext";
 import Modal from "./components/Modal";
 import UserProfie from "./components/UserProfile";
-import MyFolliwngPost from "./components/MyFollowingPost";
+import MyFolliwngPost from "./components/MyPosts";
 
 function App() {
   const [userLogin, setUserLogin] = useState(false);
@@ -25,6 +25,7 @@ function App() {
         <LoginContext.Provider value={{ setUserLogin, setModalOpen }}>
           <Navbar login={userLogin} />
           <Routes>
+            <Route path="/" element={<Home />}></Route>
             <Route path="/Post" element={<Post />}></Route>
             <Route path="/signup" element={<SignUp />}></Route>
             <Route path="/signin" element={<SignIn />}></Route>

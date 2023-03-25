@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logo from "../img/logo.png";
+import logo from "../img/logo.jpg";
 import "./SignUp.css";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -59,9 +59,9 @@ export default function SignUp() {
     <div className="signUp">
       <div className="form-container">
         <div className="form">
-          <img className="signUpLogo" src={logo} alt="" />
+          <img width={"60px"} height={"60px"}  className="signUpLogo" src={logo} alt="" />
           <p className="loginPara">
-            Sign up to see photos and videos <br /> from your friends
+            Sign up to collobrate with others <br />
           </p>
           <div>
             <input type="email" name="email" id="email" value={email} placeholder="Email" onChange={(e) => { setEmail(e.target.value) }} />
@@ -99,7 +99,7 @@ export default function SignUp() {
           <input type="submit" id="submit-btn" value="Sign Up" onClick={() => { postData() }} />
         </div>
         <div className="form2">
-          Already have an account ?
+          <p>Already have an account ?</p>
           <Link to="/signin">
             <span style={{ color: "blue", cursor: "pointer" }}>Sign In</span>
           </Link>
