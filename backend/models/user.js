@@ -25,6 +25,10 @@ const userSchema = new mongoose.Schema({
     Photo: {
         type: String,
     },
+    posts: [{
+        type: ObjectId,
+        ref: "POST"
+    }],
     Portfolio: {
         type: String
     },
