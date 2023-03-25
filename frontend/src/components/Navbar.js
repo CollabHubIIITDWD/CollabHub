@@ -11,6 +11,7 @@ export default function Navbar({ login }) {
     if (login || token) {
       return [
         <>
+          <Link to="/">Home</Link>
           <Link to="/profile">
             <li>Profile</li>
           </Link>
@@ -43,6 +44,7 @@ export default function Navbar({ login }) {
     <div className="navbar">
       <img src={logo} alt="" />
       <ul className="nav-menu">{loginStatus()}</ul>
+
     </div>
   );
 }
