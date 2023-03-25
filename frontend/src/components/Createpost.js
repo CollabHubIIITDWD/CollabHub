@@ -5,6 +5,10 @@ import { useNavigate } from "react-router-dom";
 
 export default function Createpost() {
   const [body, setBody] = useState("");
+  const [category, setCategory] = useState("");
+  const [tech, setTech] = useState("");
+  const [start, setStart] = useState("");
+  const [end, setEnd] = useState("");
   const [image, setImage] = useState("")
   const [url, setUrl] = useState("")
   const navigate = useNavigate()
@@ -27,6 +31,10 @@ export default function Createpost() {
         },
         body: JSON.stringify({
           body,
+          category,
+          tech,
+          start,
+          end,
           pic: url
         })
       }).then(res => res.json())
@@ -35,7 +43,7 @@ export default function Createpost() {
             notifyA(data.error)
           } else {
             notifyB("Successfully Posted")
-            navigate("/")
+            navigate("/post")
           }
         })
         .catch(err => console.log(err))
@@ -47,11 +55,15 @@ export default function Createpost() {
   // posting image to cloudinary
   const postDetails = () => {
 
-    console.log(body, image)
     const data = new FormData()
+    console.log(data.category)
     data.append("file", image)
     data.append("upload_preset", "insta-clone")
     data.append("cloud_name", "cantacloud2")
+    //   data.append("category", category);
+  // data.append("tech", tech);
+  // data.append("start", start);
+  // data.append("end", end);
     fetch("https://api.cloudinary.com/v1_1/cantacloud2/image/upload", {
       method: "post",
       body: data
@@ -105,6 +117,18 @@ export default function Createpost() {
         </div>
         <textarea value={body} onChange={(e) => {
           setBody(e.target.value)
+        }} type="text" placeholder="Write a caption...."></textarea>
+        <textarea value={category} onChange={(e) => {
+          setCategory(e.target.value)
+        }} type="text" placeholder="Write a caption...."></textarea>
+        <textarea value={tech} onChange={(e) => {
+          setTech(e.target.value)
+        }} type="text" placeholder="Write a caption...."></textarea>
+        <textarea value={start} onChange={(e) => {
+          setStart(e.target.value)
+        }} type="text" placeholder="Write a caption...."></textarea>
+        <textarea value={end} onChange={(e) => {
+          setEnd(e.target.value)
         }} type="text" placeholder="Write a caption...."></textarea>
       </div>
     </div>
